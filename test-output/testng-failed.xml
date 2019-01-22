@@ -6,6 +6,8 @@
       <class name="com.seleniumnew.Apitestpayslips.Apigetemploy2109">
         <methods>
           <include name="test"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.seleniumnew.Apitestpayslips.Apigetemploy2109 -->
     </classes>

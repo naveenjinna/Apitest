@@ -1,5 +1,8 @@
 package com.seleniumnew.Apitestpayslips;
-
+import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,13 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.http.client.ClientProtocolException;
-import org.junit.After;
-import org.junit.Before;
-//import org.testng.annotations.Test;
-import org.junit.Test;
-
-import junit.framework.Assert; 
+import org.apache.http.client.ClientProtocolException; 
 
 @SuppressWarnings("deprecation")
 public class Apigetemploy2109 {
@@ -22,7 +19,7 @@ public class Apigetemploy2109 {
 
 	/////private String baseUrl;
    
-	@Before
+	@BeforeMethod
 	public void setUp() throws Exception {
 		
 		System.setProperty("webdriver.chrome.driver", "usr/local/bin/chromedriver");
@@ -30,7 +27,7 @@ public class Apigetemploy2109 {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
-	@After
+	@AfterMethod
 	public void tearDown() throws Exception {
 		//driver.close();
 		//driver.quit();
@@ -45,7 +42,7 @@ public class Apigetemploy2109 {
 		String ExpectedString = employApiResponse.GetResponse();
 		System.out.println("#########"+webElement.getText());
 		System.out.println("#####*****####"+ExpectedString);
-		Assert.assertTrue(webElement.getText().equals(ExpectedString));
+		AssertJUnit.assertTrue(webElement.getText().equals(ExpectedString));
 		
 	}
 }
